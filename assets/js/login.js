@@ -44,7 +44,7 @@ $(function() {
             //             console.log(res);
             //         }
             //     })
-        $.post('/register', { username: $("#form_reg [name=username]").val(), password: $("#form_reg [name=password]").val() }, function(res) {
+        $.post('/ajax/reguser', { username: $("#form_reg [name=username]").val(), password: $("#form_reg [name=password]").val() }, function(res) {
             // console.log(res);
             // if (res.status != 0) {
             //     return layer.msg(res.message)
@@ -58,7 +58,7 @@ $(function() {
     $("#form_login").submit(function(e) {
         e.preventDefault()
         $.ajax({
-            url: '/login',
+            url: '/api/login',
             method: "POST",
             data: $(this).serialize(),
             success: function(res) {
@@ -66,7 +66,8 @@ $(function() {
                 //     return layer.msg(res.message)
                 // }
                 layer.msg("登陆成功")
-                localStorage.setItem("token", res.data.token)
+                localStorage.setItem("token", res.token)
+                    // console.log(res.token);
                     // console.log(res);
                 location.href = '/index.html'
             }
