@@ -7,7 +7,7 @@ $(function() {
             function(index) {
 
                 // 清空本地存储的token
-                localStorage.removeItem("token")
+                // localStorage.removeItem("token")
 
                 //重新跳转到登录页
                 location.href = '/login.html'
@@ -55,7 +55,7 @@ $(function() {
                 "username": "admin",
                 "nickname": "a1",
                 "email": "admin@itcast.cn",
-                "user_pic": "./assets/images/sample.jpg"
+                "user_pic": "../images/sample.jpg"
             }
         }
         renderAvatar(res.data)

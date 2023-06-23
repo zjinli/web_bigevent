@@ -12,6 +12,8 @@ $.ajaxPrefilter(function(options) {
         }
     }
 
+
+    //控制不经过登录直接跳转首页
     // options.complete = function(res) {
     //     location.href = "./login.html"
     //     if (res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败") {
